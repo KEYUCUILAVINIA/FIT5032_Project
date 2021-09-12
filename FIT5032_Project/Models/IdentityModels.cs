@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace FIT5032_Project.Models
+namespace FIT5032_2021S2.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -29,5 +29,9 @@ namespace FIT5032_Project.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Store> Stores { get; set; }
+        public DbSet<EventType> EventTypes { get; set; }
+        public DbSet<StoreEvent> storeEvents { get; set; }
     }
 }
